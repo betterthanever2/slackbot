@@ -1,0 +1,33 @@
+app:
+  environment: stage
+  vaultAuthPath: kubernetes-stage
+
+
+  image:
+    tag: 0.2.3
+
+  resources:
+    limits:
+      memory: 16Mi
+    requests:
+      memory: 16Mi
+
+  ingress:
+    enabled: false
+    annotations:
+      kubernetes.io/ingress.class: alb
+      external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
+      external-dns.alpha.kubernetes.io/hostname: calculations-api-int.dev.cs-int-592.com
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/group.name: admin-internal-dev
+      alb.ingress.kubernetes.io/healthcheck-path: /admin/health
+      alb.ingress.kubernetes.io/success-codes: 200,204,404
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    hosts: []
+    paths:
+      - path: /*
+        backend:
+          servicePort: 20005
+          
+  serviceAccount:
+    create: false

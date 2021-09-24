@@ -1,0 +1,42 @@
+app:
+  environment: stage
+  vaultAuthPath: kubernetes-stage
+
+
+  image:
+    tag: 0.2.3
+
+  resources:
+    limits:
+      memory: 16Mi
+    requests:
+      memory: 16Mi
+
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internal
+      external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
+      external-dns.alpha.kubernetes.io/hostname: echo-service-int.stage.cs-int-592.com
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/group.name: argocd-internal-stage
+      alb.ingress.kubernetes.io/healthcheck-path: /
+      alb.ingress.kubernetes.io/success-codes: 200,204
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+      alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    hosts:
+      - echo-service-int.stage.cs-int-592.com
+      - echo-service.stage.cs-int-592.com
+    paths:
+      - path: /*
+        backend:
+          servicePort: 80
+    extraPaths:
+      - path: /*
+        backend:
+          serviceName: ssl-redirect
+          servicePort: use-annotation
+          
+  serviceAccount:
+    create: false

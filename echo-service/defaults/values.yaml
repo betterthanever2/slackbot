@@ -1,0 +1,62 @@
+app:
+  appName: "compstak-slack-bot"
+  replicas: 1
+  vaultUrl: https://vault-int.infra.cs-int-592.com
+  vaultProject: compstak-slack-bot
+  vaultNamespace: compstak-slack-bot
+  nodeSelector:
+    tier: "app"
+
+  containerArgs: ["-text", "hello world"]
+
+  statefulset:
+    enabled: false
+
+  deployment:
+    enabled: true
+
+  service:
+    type: ClusterIP
+    ports:
+      http:
+        externalPort: 111
+        internalPort: 111
+        protocol: TCP
+
+  image:
+    repository: "278696104475.dkr.ecr.us-east-1.amazonaws.com/compstak/compstak-slack-bot"
+
+  prometheus:
+    enabled: false
+    port: "8011"
+
+  livenessProbe:
+    enabled: false
+    mode: httpGet
+    httpGet:
+      port: 5678
+      path: "/"
+
+  readinessProbe:
+    enabled: true
+    mode: httpGet
+    httpGet:
+      port: 5678
+      path: "/"
+
+  job:
+    enabled: false
+
+   secrets:
+     SQL_DATABASE: SQL_DATABASE
+
+  extraSecrets:
+    SQL_HOST: vault:secret/data/infra/aurora-mysql-compstak-services/{{ .Values.environment }}#RDS_HOST
+    SQL_PORT: vault:secret/data/infra/aurora-mysql-compstak-services/{{ .Values.environment }}#RDS_PORT
+    SQL_USERNAME: vault:secret/data/infra/aurora-mysql-compstak-services/{{ .Values.environment }}#RDS_USERNAME
+    SQL_PASSWORD: vault:secret/data/infra/aurora-mysql-compstak-services/{{ .Values.environment }}#RDS_PASSWORD
+
+
+
+  # extraSecrets:
+  #   SECRET_VAR: SECRET_VAR

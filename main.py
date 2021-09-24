@@ -2,8 +2,10 @@ import os
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
-app_token = os.environ.get('SLACK_APP_TOKEN')
-bot_token = os.environ.get('SLACK_BOT_TOKEN')
+# app_token = os.environ.get('SLACK_APP_TOKEN')
+app_token = 'xapp-1-A02ED9EJGEM-2521907480230-4cac6d00bd60649e815737c7393f4c2ce5cdee3de1bc58c4aa301837c9c7ccec'
+# bot_token = os.environ.get('SLACK_BOT_TOKEN')
+bot_token = 'xoxb-2151429001-2484817093683-DLJUYA9lgXBpY5tFp0tS4UpB'
 
 app = App(token=bot_token)
 payload = [
