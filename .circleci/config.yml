@@ -1,0 +1,15 @@
+version: 2.1
+
+orbs:
+    aws-ecr: circleci/aws-ecr@0.0.5
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - aws-ecr/build_and_push_image:
+          context: aws-deploy
+          account-url: $AWS_ECR_ACCOUNT_URL
+          repo: slack-bot
+          region: $AWS_REGION
+          tag: $CIRCLE_SHA1-
