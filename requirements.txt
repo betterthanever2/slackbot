@@ -1,0 +1,5 @@
+os
+requests_html
+random
+json==2.0.9
+slack_bolt==1.9.1

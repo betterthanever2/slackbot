@@ -1,5 +1,5 @@
 app:
-  appName: "compstak-slack-bot"
+  appName: "slack-bot"
   replicas: 1
   vaultUrl: https://vault-int.infra.cs-int-592.com
   vaultProject: compstak-slack-bot
@@ -24,7 +24,7 @@ app:
         protocol: TCP
 
   image:
-    repository: "278696104475.dkr.ecr.us-east-1.amazonaws.com/compstak/compstak-slack-bot"
+    repository: "278696104475.dkr.ecr.us-east-1.amazonaws.com/compstak/slack-bot"
 
   prometheus:
     enabled: false
