@@ -2,8 +2,8 @@ app:
   appName: "slack-bot"
   replicas: 1
   vaultUrl: https://vault-int.infra.cs-int-592.com
-  vaultProject: compstak-slack-bot
-  vaultNamespace: compstak-slack-bot
+  vaultProject: slack-bot
+  vaultNamespace: slack-bot
   nodeSelector:
     tier: "app"
 
