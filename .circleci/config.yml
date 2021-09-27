@@ -12,4 +12,4 @@ workflows:
           account-url: $AWS_ECR_ACCOUNT_URL
           repo: slack-bot
           region: $AWS_REGION
-          tag: $CIRCLE_SHA1-
+          tag: $CIRCLE_SHA1
