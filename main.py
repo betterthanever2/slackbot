@@ -9,7 +9,7 @@ app_token = os.environ.get('SLACK_APP_TOKEN')
 bot_token = os.environ.get('SLACK_BOT_TOKEN')
 giphy_rating = ['g', 'pg', 'pg-13', 'r']
 giphy_url = 'https://api.giphy.com/v1/gifs/random'
-giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
+giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': os.environ.get('GIPHY_API_KEY')}
 
 
 app = App(token=bot_token)
