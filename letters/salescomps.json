@@ -1,0 +1,158 @@
+{
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Find here useful links that have to do with the _Sales Comps Pipeline Refactoring_ project."
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Product requirements"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/wiki/spaces/TECH/pages/2263482694/Salescomps+Model+Refactoring+PRD",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Modelling strategy"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/wiki/spaces/TECH/pages/1616969753/Sales+Comps+Modelling+Strategy",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "SC versions: Entity Relationships Diagram"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence/Lucid",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/wiki/spaces/TECH/pages/1731887105/Sales+Comps+Versions",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Sales Pipeline POC"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/wiki/spaces/TECH/pages/1917976830/Sales+Pipeline+POC",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Staging Sales data"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "GitHub",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://github.com/compstak/staging-sales-data",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Attom and First American documentation (raw)"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Google Drive",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://drive.google.com/drive/u/1/folders/12pTSp7gX6zXJ6dqVxftJWp6Ef48Soxrg",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Fields mapping"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Google Sheets",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://docs.google.com/spreadsheets/d/1CGGGmKAoIXBnjwxqiypPSzf5apusI0by0KG-ZF-wMi8/edit#gid=0",
+				"action_id": "button-action"
+			}
+		}
+	]
+}

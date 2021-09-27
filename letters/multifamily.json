@@ -1,0 +1,221 @@
+{
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Find here useful links that have to do with the _MultiFamily_ project."
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "RealPage files"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Google Drive",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://drive.google.com/drive/u/1/folders/1L3XXKHp4R-Hztpokb72Cm1agY0vpZG1s",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "MultiFamily requirements"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/l/c/o47wTG7a",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Architechture proposal"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/l/c/2HZk1MGe",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Downloaded Raw Data"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "AWS",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://s3.console.aws.amazon.com/s3/buckets/compstak-realpage?region=us-east-1&tab=objects",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Creds for staged data in PostgreSQL (realpage DB)"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Vault",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://vault.infra.cs-int-592.com/ui/vault/secrets/secret/show/infra/rds-postgress/stage",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "sFTP creds"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Vault",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://vault.infra.cs-int-592.com/ui/vault/secrets/secret/show/apps/realpage/realpage/stage",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Real Page Sales Comp Coverage Dashboard"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Periscope",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://app.periscopedata.com/app/compstak/851745/RealPage---Sales-Comp-Coverage",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Real Page Property Bounty Tracking Dashboard"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Periscope",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://app.periscopedata.com/app/compstak/854643/RealPage---Property-Bounty-Tracker",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "RealPage Analytics Retool app"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Retool",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.retool.com/apps/Real%20Page%20Analytics%20POC",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Note on CircleCI"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Confluence",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://compstak.atlassian.net/wiki/spaces/TECH/pages/1867579405/CircleCI+for+RealPage",
+				"action_id": "button-action"
+			}
+		}
+	]
+}
