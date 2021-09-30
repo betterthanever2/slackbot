@@ -5,14 +5,14 @@ from requests_html import HTMLSession
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
-app_token = os.environ.get('SLACK_APP_TOKEN')
-bot_token = os.environ.get('SLACK_BOT_TOKEN')
-
+# app_token = os.environ.get('SLACK_APP_TOKEN')
+# bot_token = os.environ.get('SLACK_BOT_TOKEN')
+bot_token = 'xoxb-2151429001-2484817093683-ilklrYTN3z0kLiAvw1sEh9D5'
+app_token = 'xapp-1-A02ED9EJGEM-2558938697104-bd8035132157799230fafde32f49cfbc061ef702f4a4a896e2550e24f987ee3b'
 giphy_rating = ['g', 'pg', 'pg-13', 'r']
 giphy_url = 'https://api.giphy.com/v1/gifs/random'
-giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': os.environ.get('GIPHY_API_KEY')}
-# giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
-
+# giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': os.environ.get('GIPHY_API_KEY')}
+giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
 
 
 app = App(token=bot_token)
