@@ -5,12 +5,13 @@ from requests_html import HTMLSession
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
-# app_token = os.environ.get('SLACK_APP_TOKEN')
-# bot_token = os.environ.get('SLACK_BOT_TOKEN')
+app_token = os.environ.get('SLACK_APP_TOKEN')
+bot_token = os.environ.get('SLACK_BOT_TOKEN')
+
 giphy_rating = ['g', 'pg', 'pg-13', 'r']
 giphy_url = 'https://api.giphy.com/v1/gifs/random'
-# giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': os.environ.get('GIPHY_API_KEY')}
-giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
+giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': os.environ.get('GIPHY_API_KEY')}
+# giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
 
 
 app = App(token=bot_token)
@@ -71,7 +72,7 @@ def send_cat_gif(ack, command, client):
     session = HTMLSession()
     r = session.get(giphy_url, params=giphy_payload)
     rj = r.json()
-    blocks = [{"type": "image",	"image_url": rj["data"]["image_url"], "alt_text": "cat"}]
+    blocks = [{"type": "image",	"image_url": rj["data"]["image_url"], "alt_text": "cat", "text": {"type": "plain_text", "text": "Hello world"}}]
 
     if command['channel_name'] == 'directmessage':
         client.chat_postMessage(channel=command['user_id'], blocks=blocks, user=command['user_id'])

@@ -4,7 +4,7 @@ app:
 
 
   image:
-    tag: 502eb8e8a4da231e455279c08f81066a372902bc
+    tag: a80438e5bc17ce7ff8181d77d52f5ae46cfdce24
 
   resources:
     limits:
