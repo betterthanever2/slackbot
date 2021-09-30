@@ -47,11 +47,6 @@ app:
   job:
     enabled: false
 
-#  configmap:
-#    API_HOST: "exchange-api.compstak-services.svc.cluster.local"
-#    API_PORT: 10020
-#    PORT: 5251
-
    secrets:
      SQL_DATABASE: SQL_DATABASE
 
