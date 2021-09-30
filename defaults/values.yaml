@@ -24,7 +24,7 @@ app:
         protocol: TCP
 
   image:
-    repository: "278696104475.dkr.ecr.us-east-1.amazonaws.com/compstak/slack-bot"
+    repository: "278696104475.dkr.ecr.us-east-1.amazonaws.com/slack-bot"
 
   prometheus:
     enabled: false
