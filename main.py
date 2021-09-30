@@ -14,6 +14,7 @@ giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'ap
 # giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
 
 
+
 app = App(token=bot_token)
 
 @app.command("/docs")
