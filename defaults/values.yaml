@@ -47,8 +47,8 @@ app:
   job:
     enabled: false
 
-   secrets:
-     SQL_DATABASE: SQL_DATABASE
+  secrets:
+    SQL_DATABASE: SQL_DATABASE
 
   extraSecrets:
     PG_SQL_HOST: vault:secret/data/infra/rds-postgress/{{ .Values.environment }}#RDS_HOST
