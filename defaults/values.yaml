@@ -35,7 +35,7 @@ app:
     mode: httpGet
     httpGet:
       port: 5678
-      path: "/health"
+      path: "/"
 
   readinessProbe:
     enabled: true
