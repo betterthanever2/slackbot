@@ -5,8 +5,8 @@ from requests_html import HTMLSession
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
-app_token = os.environ.get('SLACK_APP_TOKEN')
-bot_token = os.environ.get('SLACK_BOT_TOKEN')
+SLACK_APP_TOKEN = os.environ.get('SLACK_APP_TOKEN')
+SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
 
 giphy_rating = ['g', 'pg', 'pg-13', 'r']
 giphy_url = 'https://api.giphy.com/v1/gifs/random'
@@ -14,7 +14,7 @@ giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'ap
 # giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': '3kXXQ0wQ7k3QhgKfW8IRfi1EpN1qec89'}
 
 
-app = App(token=bot_token)
+app = App(token=SLACK_BOT_TOKEN)
 
 @app.command("/docs")
 @app.event("app_mention")
@@ -81,4 +81,4 @@ def send_cat_gif(ack, command, client):
 
 
 if __name__ == "__main__":
-    SocketModeHandler(app, app_token).start()
+    SocketModeHandler(app, SLACK_APP_TOKEN).start()
