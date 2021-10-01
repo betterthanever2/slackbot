@@ -1,26 +1,58 @@
 {
-   "type":"home",
-   "blocks":[
-      {
-         "type":"section",
-         "text":{
-            "type":"mrkdwn",
-            "text":"This is empty for now. All the action is in the Messages."
-         }
-      },
-      {
-         "type":"actions",
-         "elements":[
-            {
-               "type":"button",
-               "text":{
-                  "type":"plain_text",
-                  "text":"Messages",
-                  "emoji":true,
-                  "url": "slack://app?team=T024FCM01&id=A02ED9EJGEM&tab=messages"
-               }
-            }
-         ]
-      }
-   ]
+	"type": "home",
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "CompStak Bot",
+				"emoji": true
+			}
+		},
+		{
+			"type": "image",
+			"title": {
+				"type": "plain_text",
+				"text": "Our Docs Are Wild",
+				"emoji": true
+			},
+			"image_url": "https://miro.medium.com/max/3532/1*2OKX1nhsZ3-CB2CidEdhJw.png",
+			"alt_text": "marg"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "This application will help you to quickly obtain information about ongoing CompStak projects by providing you with direct URLs to documents and resourses."
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "A bunch of stuff will appear here in the future, and in the meantime, you can use the slash commands we have."
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "View available commands"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "View",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "slack://app?team=T024FCM01&id=A02ED9EJGEM&tab=about",
+				"action_id": "button-action"
+			}
+		}
+	]
 }

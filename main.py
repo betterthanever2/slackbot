@@ -17,11 +17,11 @@ giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'ap
 app = App(token=SLACK_BOT_TOKEN)
 
 @app.event("app_home_opened")
-def show_home(ack, client):
+def show_home(ack, event, client):
     ack()
     with open('letters/hometab.json', 'r') as f:
         payload = json.load(f)
-    client.views_open(view=payload)
+    client.views_publish(view=payload, user_id=event['user'])
 
 
 @app.command("/docs")
@@ -29,11 +29,9 @@ def show_home(ack, client):
 def send_links(ack, command, client):
     ack()
     if command['text'] == 'help':
-        #slack://app?team=T024FCM01&id=A02ED9EJGEM&tab=home
         with open('letters/aboutdocs.json', 'r') as f:
             payload = json.load(f)
     else:
-        print(command)
         with open('letters/maindocs.json', 'r') as f:
             payload = json.load(f)
 
