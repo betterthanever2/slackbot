@@ -66,7 +66,7 @@ def send_cat_gif(ack, command, client):
     session = HTMLSession()
     r = session.get(giphy_url, params=giphy_payload)
     rj = r.json()
-    blocks = [{"type": "image",	"image_url": rj["data"]["image_url"], "alt_text": "cat", "text": {"type": "plain_text", "text": "Hello world"}}]
+    blocks = [{"type": "image",	"image_url": rj["data"]["image_url"], "alt_text": "cat"}]
 
     if command['channel_name'] == 'directmessage':
         client.chat_postMessage(channel=command['user_id'], blocks=blocks, user=command['user_id'])
