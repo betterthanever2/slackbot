@@ -1,0 +1,26 @@
+{
+   "type":"home",
+   "blocks":[
+      {
+         "type":"section",
+         "text":{
+            "type":"mrkdwn",
+            "text":"This is empty for now. All the action is in the Messages."
+         }
+      },
+      {
+         "type":"actions",
+         "elements":[
+            {
+               "type":"button",
+               "text":{
+                  "type":"plain_text",
+                  "text":"Messages",
+                  "emoji":true,
+                  "url": "slack://app?team=T024FCM01&id=A02ED9EJGEM&tab=messages"
+               }
+            }
+         ]
+      }
+   ]
+}

@@ -16,35 +16,31 @@ giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'ap
 
 app = App(token=SLACK_BOT_TOKEN)
 
+@app.event("app_home_opened")
+def show_home(ack, client):
+    ack()
+    with open('letters/hometab.json', 'r') as f:
+        payload = json.load(f)
+    client.views_open(view=payload)
+
+
 @app.command("/docs")
 @app.event("app_mention")
 def send_links(ack, command, client):
     ack()
-    with open('letters/maindocs.json', 'r') as f:
-        payload = json.load(f)
+    if command['text'] == 'help':
+        #slack://app?team=T024FCM01&id=A02ED9EJGEM&tab=home
+        with open('letters/aboutdocs.json', 'r') as f:
+            payload = json.load(f)
+    else:
+        print(command)
+        with open('letters/maindocs.json', 'r') as f:
+            payload = json.load(f)
 
     if command['channel_name'] == 'directmessage':
         client.chat_postEphemeral(channel=command['user_id'], blocks=payload['blocks'], user=command['user_id'])
     else:
         client.chat_postEphemeral(channel=command['channel_id'], blocks=payload['blocks'], user=command['user_id'])
-
-@app.command("/aboutdocs")
-def send_info(ack, command, client):
-    ack()
-    with open('letters/aboutdocs.json', 'r') as f:
-        payload = json.load(f)
-
-@app.command("/aboutbottleneck")
-def send_bottleneck_links(ack, command, client):
-    ack()
-    with open('letters/bottleneck.json', 'r') as f:
-        payload = json.load(f)
-
-@app.command("/aboutppm")
-def send_ppm_links(ack, command, client):
-    ack()
-    with open('letters/ppm.json', 'r') as f:
-        payload = json.load(f)
 
 @app.command("/aboutsalescomps")
 def send_salescomps_links(ack, command, client):
@@ -66,7 +62,7 @@ def send_multifamily_links(ack, command, client):
     else:
         client.chat_postEphemeral(channel=command['channel_id'], blocks=payload['blocks'], user=command['user_id'])
 
-@app.command("/sharecat")
+@app.command("/watchacat")
 def send_cat_gif(ack, command, client):
     ack()
     session = HTMLSession()
