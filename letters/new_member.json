@@ -1,0 +1,136 @@
+{
+	"type": "modal",
+	"title": {"type": "plain_text", "text": "Welcome!"},
+	"close": {"type": "plain_text", "text": "Close"},
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "Hi there!",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "You are now a part of CompStak. *Welcome!* We really do hope that you are going to like it here. You've been assigned to team {TEAM}"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "There is a lot for you to learn about how things work. For starters, join the <https://compstak.slack.com/archives/C024FCM07|General> and the <https://compstak.slack.com/archives/C024FCM09|Random> channels. You will be invited to the team-specific channels later."
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "Now, let's collect same condensed information about your precious person. Please, keep it short and indicate only the most relevant:",
+				"emoji": true
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "input",
+			"block_id": "input1",
+			"element": {
+				"type": "plain_text_input",
+				"multiline": true,
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Tell us about your edication and work experience",
+				"emoji": true
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "plain_text",
+					"text": "Example:",
+					"emoji": true
+				}
+			]
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "mrkdwn",
+					"text": "*Graduated* from Harvard in 1987. *Worked* as janitor for 20 years. *Learned* Scala in 2009, and have been working as engineer since 2010."
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "plain_text",
+				"text": "Now, please provide three statements about yourself (in general, not just the work stuff), two of which will be true, and the third — a lie.",
+				"emoji": true
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "plain_text",
+					"text": "This is for a game we sometimes play",
+					"emoji": true
+				}
+			]
+		},
+		{
+			"type": "input",
+			"block_id": "input2",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Statement 1",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "input3",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Statement 2",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "input4",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Statement 3",
+				"emoji": true
+			}
+		}
+	]
+}
