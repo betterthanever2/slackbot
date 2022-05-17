@@ -1,7 +1,21 @@
 {
 	"type": "modal",
-	"title": {"type": "plain_text", "text": "Welcome!"},
-	"close": {"type": "plain_text", "text": "Close"},
+	"callback_id": "new_member_modal",
+	"title": {
+		"type": "plain_text",
+		"text": "Welcome to CompStak!",
+		"emoji": true
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
 	"blocks": [
 		{
 			"type": "header",
@@ -32,7 +46,7 @@
 			"type": "section",
 			"text": {
 				"type": "plain_text",
-				"text": "Now, let's collect same condensed information about your precious person. Please, keep it short and indicate only the most relevant:",
+				"text": "Now, let's collect some condensed information about your precious person. Please, keep it short and indicate only the most relevant:",
 				"emoji": true
 			}
 		},
@@ -88,7 +102,7 @@
 			"elements": [
 				{
 					"type": "plain_text",
-					"text": "This is for a game we sometimes play",
+					"text": "This is for a game we sometimes play. Order is up to you",
 					"emoji": true
 				}
 			]

@@ -1,6 +1,7 @@
 import os
 import json
 import random
+from pathlib import Path
 from requests_html import HTMLSession
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
@@ -22,38 +23,36 @@ def show_home(ack, event, client):
         payload = json.load(f)
     client.views_publish(view=payload, user_id=event['user'])
 
-@app.event("member_joined_channel")
-def listen_new(ack, event, client):
+@app.shortcut("tech_onboarding")
+def listen_new(ack, shortcut, client):
     ack()
-    print(event)
-    if event["channel"] == "C01HFNTSRTJ": # Update
-        with open('letters/new_member.json', 'r') as f:
-            payload = json.load(f)
-        client.views_open(view=payload, user_id=event["user"])
+    with open('letters/new_member.json', 'r') as f:
+        payload = json.load(f)
+    client.views_open(trigger_id=shortcut["trigger_id"], view=payload, user_id=shortcut["user"])
 
-@app.view("view_1")
+@app.view("new_member_modal")
 def handle_submission(ack, body, client, view, logger):
-    user = body["user"]["id"]
-    superviser_id = "U017RQD58G0" # send info
-    # general_id = "C024FCM07"
-    general_id = "C024FCM09" # this is random
+    ack()
+    user_id = body["user"]["id"]
+    superviser_id = "U017RQD58G0" # send info -- Update
+    general_id = "C024FCM07"
+    # general_id = "C01HFNTSRTJ" # this is virtual_coffee
 
     errors = {}
-
-    description = view["state"]["values"]["input1"]
-    if description is not None and len(description) <= 25:
+    description = view["state"]["values"]["input1"]["plain_text_input-action"]["value"]
+    if description is not None and len(description) <= 5:
         errors["input1"] = "Please, write a little more"
 
-    q1 = view["state"]["values"]["input2"]
-    if q1 is not None and len(q1) <= 25:
+    q1 = view["state"]["values"]["input2"]["plain_text_input-action"]["value"]
+    if q1 is not None and len(q1) <= 5:
         errors["input2"] = "Please, write a little more"
 
-    q2 = view["state"]["values"]["input3"]
-    if q2 is not None and len(q2) <= 25:
+    q2 = view["state"]["values"]["input3"]["plain_text_input-action"]["value"]
+    if q2 is not None and len(q2) <= 5:
         errors["input3"] = "Please, write a little more"
 
-    q3 = view["state"]["values"]["input4"]
-    if q3 is not None and len(q3) <= 25:
+    q3 = view["state"]["values"]["input4"]["plain_text_input-action"]["value"]
+    if q3 is not None and len(q3) <= 5:
         errors["input4"] = "Come on already!"
 
     if errors:
@@ -62,14 +61,24 @@ def handle_submission(ack, body, client, view, logger):
 
     ack()
 
-    general_blocks = [{
-        "type": "section",
-        "text": {"type": "plain_text", "text": description},
-    }]
+    general_blocks = [
+        {
+            "type": "section",
+            "text": {"type": "plain_text", "text": f"Please, welcome the newest addition to the engineering team: {body['user']['name']}! Here's what they have to say about themselves:"},
+        },
+        {
+            "type": "section",
+            "text": {"type": "plain_text", "text": description},
+        }
+    ]
     super_blocks = [
         {
-        "type": "section",
-        "text": {"type": "plain_text", "text": description},
+            "type": "section",
+            "text": {"type": "plain_text", "text": f"User {body['user']['name']}'s answers"},
+        },
+        {
+            "type": "section",
+            "text": {"type": "plain_text", "text": description},
         },
         {
             "type": "section",
@@ -85,9 +94,9 @@ def handle_submission(ack, body, client, view, logger):
         },
     ]
 
-    client.chat_postMessage(channel=superviser_id, blocks = super_blocks, user=superviser_id, text=f"User {user['name']}'s answers")
-    client.chat_postMessage(channel=general_id, blocks= general_blocks, text=f"Please, welcome the newest addition to the engineering team: {user['name']}! "
-                                                                                                 f"Here's what they have to say about themselves:")
+    client.chat_postMessage(channel=superviser_id, blocks = super_blocks, user=superviser_id, text = f"User {body['user']['name']}'s answers")
+    client.chat_postMessage(channel=general_id, blocks= general_blocks, text = f"Please, welcome the newest addition to the engineering team: "
+                                                                               f"{body['user']['name']}! Here's what they have to say about themselves:")
 
 @app.command("/docs")
 @app.event("app_mention")
