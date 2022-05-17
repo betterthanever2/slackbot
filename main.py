@@ -8,6 +8,7 @@ from slack_bolt.adapter.socket_mode import SocketModeHandler
 
 SLACK_APP_TOKEN = os.environ.get('SLACK_APP_TOKEN')
 SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
+teams = ["Vega", "Polaris", "Sirius"]
 giphy_rating = ['g', 'pg', 'pg-13', 'r']
 giphy_url = 'https://api.giphy.com/v1/gifs/random'
 # giphy_payload = {'tag': 'cat', 'rating': giphy_rating[random.randint(0, 3)], 'api_key': os.environ.get('GIPHY_API_KEY')}
